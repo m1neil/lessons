@@ -1,0 +1,50 @@
+@import url("reset.css");
+
+.list__link {
+	color: #ec9704;
+}
+
+h1 {
+	color: skyblue;
+}
+
+.about__text > p {
+	color: #68904d;
+}
+
+.about__text > p span {
+	color: #c73601;
+}
+
+.history__title {
+	color: #b40129;
+}
+
+.history__title ~ p {
+	color: #a5678e;
+}
+
+.history__title + .history__list {
+	color: #bb35ae;
+}
+
+.cities__title {
+	color: cadetblue;
+}
+
+.cities__text * {
+	color: darkblue;
+}
+
+.cities__text p a {
+	color: #c73601;
+}
+
+#unique-places {
+	color: darkslateblue;
+}
+
+.ukrainians__title,
+.ukrainians__text {
+	color: #68904d;
+}
