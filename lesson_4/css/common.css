@@ -1,0 +1,14 @@
+.title {
+	color: #2b2929;
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.title--center {
+	text-align: center;
+}
+
+.text {
+	line-height: 1.87;
+	color: #2b2929;
+}
