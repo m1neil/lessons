@@ -135,6 +135,9 @@ body {
 	line-height: 1.4;
 	color: #2b2929;
 }
+.living-room__img {
+	text-align: center;
+}
 
 /* footer ========================================================== */
 .footer__title {
