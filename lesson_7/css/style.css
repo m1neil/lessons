@@ -501,11 +501,11 @@ body {
 .has__text {
 }
 
-.has__text:has(div) {
+.has__text:has(> div) {
 	background-color: green;
 	color: #fff;
 }
-.has__text:has(span) {
+.has__text:has(> span) {
 	background-color: orange;
 	color: #fff;
 }
