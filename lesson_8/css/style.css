@@ -46,6 +46,10 @@ body {
 .alternative {
 	margin-bottom: 25px;
 }
+.alternative__descr {
+	text-align: center;
+	margin-bottom: 15px;
+}
 .alternative__img {
 	max-width: 1000px;
 	margin: 0 auto;
