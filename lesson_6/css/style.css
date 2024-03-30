@@ -50,7 +50,7 @@ body {
 	margin-right: 30px;
 }
 .header__link {
-	color: #535353;
+	font-size: #535353;
 }
 
 /* living-room ===================================================================== */
@@ -88,7 +88,7 @@ body {
 	margin-bottom: 20px;
 	min-height: 28px;
 	padding-left: 47px;
-	background: url("../img/icon-check-mark.svg") 2px 1px no-repeat;
+	background: url("../img/icon-check-mark.svg") 2px 1px / 24px no-repeat;
 }
 
 /* promo ===================================================================== */
@@ -387,7 +387,7 @@ body {
 .background__position {
 	max-width: 300px;
 	padding: 10px 25px;
-	font-size: 20px;
+	font-style: 20px;
 	color: #fff;
 	margin-bottom: 10px;
 }
