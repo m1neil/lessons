@@ -1,0 +1,65 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+	font-family: "Proxima Nova", sans-serif;
+	font-size: 22px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #3b3b3d;
+}
+
+[class*="__container"] {
+	max-width: 1100px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.header {
+	padding: 50px 0;
+}
+.header__homework {
+	text-align: center;
+	font-size: 35px;
+}
+
+.graphics {
+	padding: 50px 0;
+}
+
+.graphics__row:not(:last-child) {
+	margin-bottom: 25px;
+}
+.graphics__promo {
+	max-width: 400px;
+	vertical-align: middle;
+}
+.graphics__descr {
+	display: inline-block;
+	margin-left: 15px;
+}
+.graphics__payment,
+.graphics__benefit,
+.graphics__icon {
+	vertical-align: middle;
+}
+
+.alternative {
+	margin-bottom: 25px;
+}
+.alternative__img {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.alternative__img img {
+	max-width: 100%;
+}
+
+.footer {
+	padding: 25px 0;
+	border-top: 1px solid gray;
+}
+.footer__homework {
+	text-align: center;
+	font-size: 25px;
+}
