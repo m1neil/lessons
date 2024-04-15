@@ -1,0 +1,572 @@
+@import url("reset.css");
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+}
+
+[class*="__container"] {
+	max-width: 1320px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+body {
+	font-family: "Proxima Nova", sans-serif;
+	font-size: 16px;
+	color: #fff;
+	background-color: #333;
+}
+
+.title {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+/* .header =====================================================================*/
+.header {
+	padding: 35px 0;
+}
+.header__item {
+	display: inline-block;
+}
+.header__item:not(:last-child) {
+	margin-right: 15px;
+}
+.header__link:hover {
+	color: orange;
+}
+
+/* .block-2d ===================================================================== */
+.block-2d {
+	padding: 50px 0 20px;
+}
+.block-2d__title {
+	margin-bottom: 50px;
+}
+.block-2d__items {
+	font-size: 0;
+	margin: 0 -15px;
+	text-align: center;
+}
+.block-2d__column {
+	width: 25%;
+	padding: 0 15px 30px;
+	display: inline-block;
+}
+/* .item-block-2d ===================================================================== */
+.item-block-2d,
+.item-block-3d {
+	text-align: center;
+	border: 1px solid lightgray;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.item-block-2d--transform .item-block-2d__inner {
+	transform: translate(15px, 15px);
+}
+.item-block-2d--scale .item-block-2d__inner {
+	transform: scale(0.8);
+}
+.item-block-2d--rotate .item-block-2d__inner {
+	transform: rotate(10deg);
+}
+.item-block-2d--skew .item-block-2d__inner {
+	transform: skew(-10deg);
+}
+.item-block-2d--transform-origin .item-block-2d__inner {
+	transform-origin: 0 0;
+	transform: rotate(90deg);
+}
+.item-block-2d__inner,
+.item-block-3d__inner {
+	color: #f8f8ff;
+	font-size: 18px;
+	padding: 100px 15px;
+	background-color: #7a956b;
+	border-radius: 8px;
+}
+
+/* .block-3d ===================================================================== */
+.block-3d {
+	padding: 50px 0 10px;
+}
+.block-3d__container {
+}
+.block-3d__title {
+	margin-bottom: 55px;
+}
+.block-3d__items {
+	margin: 0 -15px;
+	font-size: 0;
+}
+.block-3d__column {
+	display: inline-block;
+	width: 25%;
+	padding: 0 15px 40px;
+}
+/* .item-block-3 ===================================================================== */
+.item-block-3d {
+	perspective: 400px;
+}
+.item-block-3d--perspective {
+	perspective: 500px;
+}
+.item-block-3d__inner {
+	background-color: #77608d;
+}
+.item-block-3d--perspective .item-block-3d__inner {
+	transform: rotateX(25deg);
+}
+.item-block-3d--perspective-origin {
+	perspective: 500px;
+	perspective-origin: 0 0;
+}
+.item-block-3d--perspective-origin .item-block-3d__inner {
+	transform: rotateX(25deg);
+}
+.item-block-3d--translate-3d .item-block-3d__inner {
+	transform: translate3d(15px, 15px, 15px);
+}
+.item-block-3d--scale-3d .item-block-3d__inner {
+	transform: scale3d(0.9, 0.9, 2500);
+}
+.item-block-3d--rotate-3d {
+	perspective: 400px;
+}
+.item-block-3d--rotate-3d .item-block-3d__inner {
+	transform: rotate3d(20, 90, 3, 30deg);
+}
+.item-block-3d--transform-style {
+	transform-style: preserve-3d;
+}
+.item-block-3d--transform-style .item-block-3d__inner {
+	transform: rotateY(25deg);
+}
+.item-block-3d--backface-visibility {
+	perspective: 600px;
+	position: relative;
+}
+.item-block-3d__inner--front,
+.item-block-3d__inner--back {
+	transition: all 0.6s;
+}
+.item-block-3d--backface-visibility:hover .item-block-3d__inner--front {
+	transform: rotateY(180deg);
+}
+.item-block-3d--backface-visibility:hover .item-block-3d__inner--back {
+	transform: rotate(0);
+}
+.item-block-3d__inner--front {
+	backface-visibility: hidden;
+}
+.item-block-3d__inner--back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #794f45;
+	transform: rotateY(-180deg);
+	backface-visibility: hidden;
+}
+
+/* .picture ===================================================================== */
+.picture {
+	padding: 50px 0;
+}
+.picture__title {
+	margin-bottom: 30px;
+}
+.car {
+	position: relative;
+	height: 300px;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.car__frame-middle {
+	position: absolute;
+	bottom: 105px;
+	left: 5px;
+	width: 495px;
+	height: 30px;
+	background-color: #e23714;
+	border-radius: 10px 0 0 20px;
+	transform: skew(-30deg);
+}
+.car__frame-middle::before {
+	content: "";
+	position: absolute;
+	left: 1px;
+	top: -20px;
+	width: 94%;
+	height: 28px;
+	background-color: #e23714;
+	border-radius: 30px 0 5px 0;
+}
+.car__frame-middle:after {
+	content: "";
+	position: absolute;
+	left: 95%;
+	top: -20.29px;
+	width: 35px;
+	height: 60px;
+	background-color: #e23714;
+	transform: skew(30deg);
+	border-radius: 0 30px 5px 0;
+}
+.car__frame-footer {
+	position: absolute;
+	bottom: 45px;
+	width: 500px;
+	height: 70px;
+	background-color: #dd2e11;
+	border-radius: 8px 0 0 45px;
+}
+.car__frame-footer::after {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 100%;
+	top: 0;
+	left: 95%;
+	background-color: #dd2e11;
+	border-radius: 0 15px 20px 0;
+}
+.car__footer-lighthouse {
+	position: absolute;
+	width: 10px;
+	height: 25px;
+	top: 5px;
+	left: 4px;
+	background-color: black;
+	border-radius: 2px 5px 5px 8px;
+}
+.car__footer-gift {
+	position: absolute;
+	width: 3px;
+	height: 60%;
+	top: 50%;
+	right: 0;
+	background-color: #ced3ec;
+	transform: translateY(-50%);
+	border-radius: 50% 0 0 50%;
+}
+.car__footer-lighthouse:hover {
+	box-shadow: -20px 0 18px #fff;
+}
+.wheel {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	bottom: 0;
+	left: 0;
+	background-color: #323844;
+	border-radius: 50%;
+}
+.wheel--left {
+	left: 70px;
+}
+.wheel--right {
+	left: auto;
+	right: 20px;
+}
+.wheel__border {
+	perspective: 500px;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	top: 50%;
+	left: 50%;
+	border: 2px solid #99a0a3;
+	border-radius: 50%;
+	background-color: black;
+	transform: translate(-50%, -50%);
+}
+.wheel__border:before {
+	content: "";
+	position: absolute;
+	width: 65px;
+	height: 65px;
+	top: 50%;
+	left: 50%;
+	border: 2px solid #99a0a3;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+.wheel__border::after {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	left: 50%;
+	background-color: #323844;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+.wheel__circle {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	border: 2px solid #99a0a3;
+	transform: translate(-50%, -50%);
+	background-color: #000;
+	z-index: 1;
+}
+.wheel__line {
+	position: absolute;
+	width: 3px;
+	height: 29px;
+	top: 0;
+	left: 0;
+	background-color: #99a0a3;
+	z-index: 1;
+}
+.wheel__line--1 {
+	left: 20px;
+	top: 5px;
+	transform: rotate(-40deg);
+}
+.wheel__line--2 {
+	left: auto;
+	right: 20px;
+	top: 5px;
+	transform: rotate(40deg);
+}
+.wheel__line--3 {
+	left: 17px;
+	top: auto;
+	height: 27px;
+	bottom: 9px;
+	transform: rotate(55deg);
+}
+.wheel__line--4 {
+	left: auto;
+	top: auto;
+	right: 17px;
+	height: 27px;
+	bottom: 9px;
+	transform: rotate(-55deg);
+}
+.wheel__line--5 {
+	left: 50%;
+	top: auto;
+	bottom: 2px;
+	height: 27px;
+	transform: translateX(-50%);
+}
+.wheel__dot {
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	background-color: #99a0a3;
+	z-index: 1;
+}
+.wheel__dot--1 {
+	top: 21px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.wheel__dot--2 {
+	top: 30px;
+	left: 21px;
+}
+.wheel__dot--3 {
+	top: 42px;
+	left: 25.5px;
+}
+.wheel__dot--4 {
+	top: 42px;
+	left: auto;
+	right: 25.5px;
+}
+.wheel__dot--5 {
+	top: 30px;
+	left: auto;
+	right: 21px;
+}
+.car__roof {
+	position: absolute;
+	width: 285px;
+	height: 70px;
+	top: 75px;
+	left: 160px;
+	background-color: #d9391c;
+	transform: skew(-60deg);
+	border-radius: 50px 0 0 0;
+}
+.car__roof-glass {
+	position: absolute;
+	width: 100px;
+	height: 70px;
+	top: 75px;
+	left: 146px;
+	background-color: #296269;
+	transform: skew(-65deg);
+	border-radius: 50px 0 0 0;
+}
+.car__glass-left {
+	position: absolute;
+	width: 220px;
+	height: 60px;
+	top: 84px;
+	left: 170px;
+	background-color: #296269;
+	transform: skew(-60deg);
+	border-radius: 45px 0 0 0;
+	z-index: 1;
+}
+.car__triangle-glass {
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 65px;
+	right: 92px;
+	border-bottom: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-top: 120px solid #296269;
+	z-index: 1;
+	transform: rotate(60deg);
+}
+.car__roof-dop {
+	position: absolute;
+	width: 130px;
+	height: 100px;
+	top: 75px;
+	right: -3px;
+	background-color: #d9391c;
+	transform: skew(10deg);
+	border-radius: 0 10px 20px 0;
+}
+.car__back-lighthouse {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 138px;
+	right: -13px;
+	background-color: #c2070c;
+	z-index: 1;
+	transform: rotate(90deg);
+	border-radius: 92% 4% 4% 78% / 71% 10% 10% 23%;
+}
+.car__back-lighthouse:hover {
+	box-shadow: 0px -20px 20px #c2070c;
+}
+.car__back-lighthouse::before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	top: 50%;
+	left: 50%;
+	background-color: #d91716;
+	z-index: 2;
+	transform: translate(-50%, -50%);
+	border-radius: 92% 4% 4% 78% / 71% 10% 10% 23%;
+}
+.car__dor {
+	position: absolute;
+	width: 150px;
+	height: 100px;
+	bottom: 55px;
+	left: 185px;
+	box-shadow: 0 0 2px #000 inset;
+	border-radius: 3px 0 20px 10px;
+	z-index: 1;
+}
+.car__handle {
+	position: absolute;
+	width: 25px;
+	height: 10px;
+	top: 20px;
+	right: 15px;
+	box-shadow: 0 0 5px #bf2707 inset;
+	border-radius: 50%;
+}
+.car__handle::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	top: 50%;
+	left: 0;
+	background-color: rgba(55, 56, 56, 0.35);
+	transform: translateY(-50%);
+	border-radius: 50%;
+}
+.car__delimiter {
+	position: absolute;
+	width: 23px;
+	height: 60px;
+	top: 84px;
+	left: 320px;
+	background-color: #091516;
+	z-index: 1;
+	transform: skew(3deg);
+	clip-path: polygon(15% 0, 86% 0, 100% 100%, 0 100%);
+}
+.car__triangle-black {
+	position: absolute;
+	width: 50px;
+	height: 40px;
+	top: 104px;
+	left: 117px;
+	background-color: #091516;
+	clip-path: polygon(100% 31%, 0% 100%, 100% 100%);
+	z-index: 1;
+}
+.car__mirror {
+	position: absolute;
+	width: 25px;
+	height: 17px;
+	top: 125px;
+	left: 145px;
+	background-color: #dd4324;
+	border-radius: 60px 20px 30px 5px;
+	z-index: 1;
+	overflow: hidden;
+}
+.car__mirror::after {
+	content: "";
+	position: absolute;
+	top: 8px;
+	right: 0;
+	width: 10px;
+	height: 3px;
+	background-color: #e3d3dc;
+}
+
+.car__main-headlight {
+	position: absolute;
+	width: 50px;
+	height: 12px;
+	top: 157px;
+	left: 12px;
+	background-color: #e3d3dc;
+	border-radius: 50%;
+	transform: rotate(-20deg);
+	z-index: 1;
+}
+.car__main-headlight:hover {
+	box-shadow: -30px 3px 15px #fff;
+}
+.car__main-headlight::before {
+	content: "";
+	position: absolute;
+	width: 25px;
+	height: 8px;
+	bottom: -3px;
+	left: -1px;
+	background-color: #e3d3dc;
+	transform: rotate(10deg);
+	border-radius: 1px 0 10px 3px;
+}
