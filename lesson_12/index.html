@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>lesson 12</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__container">
+					<ul class="header__list">
+						<li class="header__item"><a href="#transition" class="header__link">Transition</a></li>
+						<li class="header__item"><a href="#animation" class="header__link">Animation</a></li>
+						<li class="header__item"><a href="#animate" class="header__link">Car</a></li>
+					</ul>
+				</div>
+			</header>
+			<main class="page">
+				<div id="transition" class="transition">
+					<div class="transition__container">
+						<h1 class="transition__title title">Transition</h1>
+						<div class="transition__items">
+							<div class="transition__item transition__item--duration">
+								<div class="transition__inner-block">transition-duration: 0.3s</div>
+							</div>
+							<div class="transition__item transition__item--property">
+								<div class="transition__inner-block">transition-property: transform</div>
+							</div>
+							<div class="transition__item transition__item--delay">
+								<div class="transition__inner-block">transition-delay: 0.5s</div>
+							</div>
+							<div class="transition__item transition__item--timing">
+								<div class="transition__inner-block"> transition-timing-function: cubic-bezier(0.85, -0.51, 0.21, 1.43)</div>
+							</div>
+							<div class="transition__item transition__item--change">
+								<div class="transition__inner-block">will-change: transform</div>
+							</div>
+							<div class="transition__item transition__item--universal">
+								<div class="transition__inner-block">
+									transition: background-color 0.3s ease-in-out, border-radius 0.3s ease 0.3s
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="animation" class="animation">
+					<div class="animation__container">
+						<h2 class="animation__title title">Animation</h2>
+						<div class="animation__items">
+							<div class="animation__item animation__item--circle"></div>
+							<div class="animation__item animation__item--parallelogram"></div>
+							<div class="animation__item animation__item--heart"></div>
+							<div class="animation__item animation__item--wheel"></div>
+							<div class="animation__item animation__item--wheel animation__item--revers"></div>
+							<div class="animation__item animation__item--wheel animation__item--alternate"></div>
+							<div class="animation__item animation__item--wheel animation__item--alternate-revers"></div>
+							<div class="animation__item animation__item--square"></div>
+							<div class="animation__item animation__item--delay"></div>
+							<button class="animation__button animation__button--forwards"></button>
+							<button class="animation__button animation__button--backwards"></button>
+							<button class="animation__button animation__button--both"></button>
+						</div>
+					</div>
+				</div>
+				<div id="animate" class="animate">
+					<div class="animate__block">
+						<img src="img/sity-like.png" alt="#" class="animate__img">
+						<img src="img/sity-like.png" alt="#" class="animate__img">
+					</div>
+					<div class="animate__road">
+						<img src="img/road.jpg" alt="road">
+						<img src="img/road.jpg" alt="road">
+					</div>
+					<div class="animate__field field">
+						<div class="field__car car">
+							<div class="car__roof-glass"></div>
+							<div class="car__glass-left"></div>
+							<div class="car__triangle-glass"></div>
+							<div class="car__triangle-black"></div>
+							<div class="car__mirror"></div>
+							<div class="car__main-headlight"></div>
+							<div class="car__roof"></div>
+							<div class="car__back-lighthouse"></div>
+							<div class="car__delimiter"></div>
+							<div class="car__dor">
+								<div class="car__handle"></div>
+							</div>
+							<div class="car__roof-dop"></div>
+							<div class="car__frame-middle"></div>
+							<div class="car__frame-footer">
+								<div class="car__footer-lighthouse">
+									<div class="car__footer-gift"></div>
+								</div>
+							</div>
+							<div class="car__wheel wheel wheel--left">
+								<div class="wheel__border">
+									<div class="wheel__circle"></div>
+									<div class="wheel__line wheel__line--1"></div>
+									<div class="wheel__line wheel__line--2"></div>
+									<div class="wheel__line wheel__line--3"></div>
+									<div class="wheel__line wheel__line--4"></div>
+									<div class="wheel__line wheel__line--5"></div>
+									<div class="wheel__dot wheel__dot--1"></div>
+									<div class="wheel__dot wheel__dot--2"></div>
+									<div class="wheel__dot wheel__dot--3"></div>
+									<div class="wheel__dot wheel__dot--4"></div>
+									<div class="wheel__dot wheel__dot--5"></div>
+								</div>
+							</div>
+							<div class="car__wheel wheel wheel--right">
+								<div class="wheel__border">
+									<div class="wheel__circle"></div>
+									<div class="wheel__line wheel__line--1"></div>
+									<div class="wheel__line wheel__line--2"></div>
+									<div class="wheel__line wheel__line--3"></div>
+									<div class="wheel__line wheel__line--4"></div>
+									<div class="wheel__line wheel__line--5"></div>
+									<div class="wheel__dot wheel__dot--1"></div>
+									<div class="wheel__dot wheel__dot--2"></div>
+									<div class="wheel__dot wheel__dot--3"></div>
+									<div class="wheel__dot wheel__dot--4"></div>
+									<div class="wheel__dot wheel__dot--5"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img class="animate__sky animate__sky--night" src="img/sky.jpg" alt="sky">
+					<img class="animate__sky animate__sky--day" src="img/sky-day.webp" alt="sky">
+					<img src="img/moon.png" alt="moon" class="animate__moon">
+					<img src="img/sun.png" alt="sun" class="animate__sun">
+				</div>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>

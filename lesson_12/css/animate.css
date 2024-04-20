@@ -1,0 +1,147 @@
+@keyframes move {
+	0% {
+		transform: translate(0);
+	}
+	100% {
+		transform: translate(-50%);
+	}
+}
+
+@keyframes rotateWheel {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes opacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes movePlanet {
+	0% {
+		left: 90%;
+	}
+	100% {
+		left: -100%;
+	}
+}
+
+@keyframes moveMoonBack {
+	0% {
+		left: 100%;
+	}
+	50%,
+	100% {
+		left: -100%;
+	}
+}
+
+@keyframes moveMoonSun {
+	0%,
+	50% {
+		left: 100%;
+	}
+	100% {
+		left: -100%;
+	}
+}
+
+@keyframes moveCircle {
+	0% {
+		translate: 0 0;
+	}
+	100% {
+		translate: 240px 0;
+	}
+}
+
+@keyframes metamorphoses {
+	0% {
+		clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+	}
+	50% {
+		clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+	}
+	100% {
+		clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+	}
+}
+
+@keyframes heartbeat {
+	from {
+		transform: scale(1);
+		transform-origin: center center;
+		animation-timing-function: ease-out;
+	}
+	10% {
+		transform: scale(0.91);
+		animation-timing-function: ease-in;
+	}
+	17% {
+		transform: scale(0.98);
+		animation-timing-function: ease-out;
+	}
+	33% {
+		transform: scale(0.87);
+		animation-timing-function: ease-in;
+	}
+	45% {
+		transform: scale(1);
+		animation-timing-function: ease-out;
+	}
+}
+
+@keyframes rotateWheelSecond {
+	0% {
+		rotate: 0;
+	}
+	100% {
+		rotate: 360deg;
+	}
+}
+
+@keyframes moveWheelSecond {
+	0% {
+		translate: 0 0;
+	}
+	100% {
+		translate: 200px 0;
+	}
+}
+
+@keyframes increaseWidth {
+	0% {
+		width: 100px;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes borderRadius {
+	0% {
+		border-radius: 0;
+	}
+	100% {
+		border-radius: 50%;
+	}
+}
+
+@keyframes backgroundColorButton {
+	0% {
+		background-color: transparent;
+		border-color: #794f45;
+	}
+	100% {
+		background-color: #794f45;
+		border-color: orangered;
+	}
+}
