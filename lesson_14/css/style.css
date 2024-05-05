@@ -476,7 +476,7 @@ body {
 	position: relative;
 }
 .radio__body {
-	column-gap: 15px;
+	column-gap: 10px;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -537,10 +537,12 @@ body {
 	transition: opacity 0.3s;
 	opacity: 0;
 }
-.radio__icons {
+.radio__icon {
+	width: 48px;
+	flex-shrink: 0;
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	column-gap: 20px;
 }
 .radio__icon img {
 	max-width: 100%;
