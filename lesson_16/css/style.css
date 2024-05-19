@@ -482,6 +482,14 @@ body {
 	color: #ffbc57;
 	position: relative;
 	padding-bottom: 3px;
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+	transition: outline-color 0.5s;
+	border-radius: 3px;
+}
+
+.contacts-phone__call:focus-visible {
+	outline-color: #ffbc57;
 }
 
 .contacts-phone__call::after {
