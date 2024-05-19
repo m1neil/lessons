@@ -480,6 +480,26 @@ body {
 .contacts-phone__call {
 	font-size: 19px;
 	color: #ffbc57;
+	position: relative;
+	padding-bottom: 3px;
+}
+
+.contacts-phone__call::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #ffbc57;
+	transition: width 0.5s;
+	border-radius: 8px;
+}
+
+@media (any-hover: hover) {
+	.contacts-phone__call:hover::after {
+		width: 100%;
+	}
 }
 
 .contacts-phone__button {
