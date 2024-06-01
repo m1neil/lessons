@@ -1,0 +1,56 @@
+@use "sass:math";
+@import url("https://fonts.googleapis.com/css?family=Orbitron:500,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Exo:regular,700&display=swap");
+@import "base/reset";
+@import "base/mixins";
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	& > main {
+		flex-grow: 1;
+	}
+}
+
+$mainColor: #fff;
+$fontFamily: "Exo";
+$fontSecond: "Orbitron";
+$fontSize: 18px;
+
+body {
+	background-color: #000001;
+	font-size: $fontSize;
+	color: $mainColor;
+	font-family: $fontFamily, sans-serif;
+	.lock & {
+		overflow: hidden;
+	}
+}
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1510;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1270;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+[class*="__container"] {
+	max-width: toPx($containerWidth);
+	margin: 0 auto;
+	padding-inline: 15px;
+}
+
+main {
+	@include adaptiveValue("padding-top", 140, 70, 0, $containerWidth, 400.98);
+}
+
+@import "common";
+@import "header";
+@import "home";

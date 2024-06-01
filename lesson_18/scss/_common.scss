@@ -1,0 +1,200 @@
+%gradient-underline {
+	position: relative;
+	padding-bottom: 10px;
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(90deg, #f00 0%, #42ff00 48.9%, #2400ff 100%);
+	}
+}
+
+// .title =====================================================================
+.title {
+	font-weight: 700;
+	@include adaptiveValue("font-size", 60, 24, 0, $containerWidth, 479.98);
+	text-transform: uppercase;
+	line-height: 1.17;
+
+	&--underline {
+		display: inline-block;
+		@extend %gradient-underline;
+		padding-bottom: 15px;
+
+		@media (max-width: 479.98px) {
+			padding-bottom: 7px;
+		}
+	}
+
+	&--inline {
+		@include adaptiveValue("padding-inline", 50, 20, 0, $containerWidth, 575.98);
+	}
+
+	&--pr {
+		@include adaptiveValue("padding-right", 144, 20, 0, $containerWidth, 575.98);
+	}
+}
+
+// .text =====================================================================
+.text {
+	line-height: 1.5;
+	letter-spacing: -0.32px;
+	text-transform: capitalize;
+	p:not(:last-child) {
+		margin-bottom: 10px;
+	}
+	@media (max-width: 649.98px) {
+		font-size: 16px;
+	}
+}
+
+// .link =====================================================================
+.link {
+	font-family: $fontSecond, sans-serif;
+	text-align: center;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+	background-color: #6f00a9;
+	padding: 15px 40px;
+	font-weight: 900;
+	font-size: 20px;
+	text-transform: uppercase;
+	outline: 2px dashed transparent;
+	outline-offset: 5px;
+	&:focus-visible {
+		outline-color: #9747ff;
+	}
+	transition:
+		background-color 0.5s,
+		outline-color 0.5s;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #0b0045;
+		}
+	}
+	@media (max-width: 599.98px) {
+		font-size: 16px;
+		// padding-block: 9px 7px;
+	}
+}
+
+// .social  =====================================================================
+.social {
+	display: flex;
+	column-gap: 24px;
+	row-gap: 15px;
+	justify-content: flex-end;
+	align-items: center;
+	line-height: 0;
+	flex-wrap: wrap;
+	@media (max-width: 420.98px) {
+		justify-content: flex-start;
+	}
+
+	// .social__item
+	&__item {
+		max-width: 20px;
+		flex-shrink: 0;
+	}
+	// .social__link
+	&__link {
+		img {
+			width: 100%;
+		}
+		outline: 2px dashed transparent;
+		outline-offset: 5px;
+		&:focus-visible {
+			outline-color: #9747ff;
+		}
+		transition:
+			transform 0.3s,
+			outline-color 0.5s;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: rotate(-15deg) scale(1.2);
+			}
+		}
+	}
+}
+
+// .run-line =====================================================================
+.run-line {
+	display: flex;
+	column-gap: 60px;
+	@media (any-hover: hover) {
+		&:hover {
+			animation-play-state: paused;
+			.run-line__list {
+				animation-play-state: paused;
+			}
+		}
+	}
+	@media (max-width: 991.98px) {
+		column-gap: 40px;
+	}
+	@media (max-width: 479.98px) {
+		column-gap: 20px;
+	}
+
+	// flex-wrap: wrap;
+
+	&__list {
+		flex-shrink: 0;
+		display: flex;
+		column-gap: 60px;
+		animation: move-run-line 9s infinite linear;
+		@media (max-width: 991.98px) {
+			animation-name: move-run-line-tablet;
+			column-gap: 40px;
+		}
+		@media (max-width: 479.98px) {
+			animation-name: move-run-line-mobile;
+			column-gap: 20px;
+		}
+	}
+	// .run-line__item
+	&__item {
+		flex-shrink: 0;
+		font-weight: 500;
+		font-size: 20px;
+		text-transform: capitalize;
+		display: flex;
+		align-items: center;
+		column-gap: 60px;
+		&::after {
+			content: "";
+			flex-shrink: 0;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-image: linear-gradient(90deg, #f00 0%, #42ff00 48.9%, #2400ff 100%);
+		}
+		@media (max-width: 991.98px) {
+			column-gap: 40px;
+		}
+		@media (max-width: 479.98px) {
+			column-gap: 20px;
+			font-size: 16px;
+		}
+	}
+}
+
+@keyframes move-run-line {
+	to {
+		transform: translateX(calc(-100% - 60px));
+	}
+}
+
+@keyframes move-run-line-tablet {
+	to {
+		transform: translateX(calc(-100% - 40px));
+	}
+}
+
+@keyframes move-run-line-mobile {
+	to {
+		transform: translateX(calc(-100% - 20px));
+	}
+}
