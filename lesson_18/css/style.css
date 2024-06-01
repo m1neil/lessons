@@ -530,7 +530,6 @@ body {
 .header::before {
   content: "";
   position: fixed;
-  width: 100%;
   top: 0;
   right: -100%;
   background-color: #000001;
@@ -562,6 +561,21 @@ body {
 }
 .menu-open .header::before {
   right: 0;
+}
+@media (min-width: 767.98px) {
+  .header::before {
+    width: 40%;
+  }
+}
+@media (max-width: 767.98px) {
+  .header::before {
+    width: 60%;
+  }
+}
+@media (max-width: 479.98px) {
+  .header::before {
+    width: 100%;
+  }
 }
 .header__container {
   display: -webkit-box;
