@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>lesson 21</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<main class="page">
+				<div class="questions">
+					<div class="questions__container">
+						<div class="questions__item item-question">
+							<div class="item-question__task">Задача №1</div>
+							<div class="item-question__title">Яка назва змінної вірна?</div>
+							<ol class="item-question__list">
+								<li class="item-question__answer">let user-name</li>
+								<li class="item-question__answer">let UserName</li>
+								<li class="item-question__answer item-question__answer--correct">let userName</li>
+							</ol>
+						</div>
+						<div class="questions__item item-question">
+							<div class="item-question__task">Задача №2</div>
+							<div class="item-question__title">Чи буде помилка при виконанні наступної програми?</div>
+							<code class="item-question__code">
+								<span>const userName = 20;</span>
+								<span>userName = "Іштван";</span>
+							</code>
+							<div class="item-question__answer item-question__answer--error">
+								Так буде помилка тому що ми робимо спробу перезаписати константу userName
+							</div>
+						</div>
+						<div class="questions__item item-question">
+							<div class="item-question__task">Задача №3</div>
+							<div class="item-question__title">Що потрапить в консоль?</div>
+							<code class="item-question__code">
+								<span>let numOne = 20</span>
+								<span>let numTwo = "20"</span>
+
+								<span>let numSumm = numOne + numTwo</span>
+								<span>console.log(numSumm)</span>
+							</code>
+							<div class="item-question__answer item-question__answer--correct">
+								В консоль потрапить строка -> "2020"
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

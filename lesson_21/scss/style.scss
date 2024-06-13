@@ -1,0 +1,130 @@
+@use "sass:math";
+@import "reset";
+@import "mixins";
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	& > main {
+		flex-grow: 1;
+	}
+}
+
+$mainColor: #fff;
+$fontFamily: "Arial";
+$fontSize: toRem(18);
+
+body {
+	background-color: #333;
+	font-size: $fontSize;
+	color: $mainColor;
+	font-family: $fontFamily, sans-serif;
+}
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1290;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+[class*="__container"] {
+	max-width: toRem($containerWidth);
+	margin: 0 auto;
+	padding-inline: toRem($containerPadding / 2);
+}
+
+.questions {
+	padding-block: toRem(50);
+	// .questions__container
+	&__container {
+	}
+	// .questions__item
+	&__item {
+		position: relative;
+		&:not(:last-child) {
+			padding-bottom: toRem(25);
+			margin-bottom: toRem(25);
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: toRem(2);
+				bottom: 0;
+				left: 0;
+				background-color: gray;
+			}
+		}
+	}
+}
+.item-question {
+	> * {
+		margin-bottom: toRem(20);
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	// .item-question__task
+	&__task {
+		font-size: toRem(20);
+		font-weight: 700;
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	// .item-question__title
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+	// .item-question__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: toRem(7);
+		align-items: flex-start;
+		padding-left: toRem(7);
+		counter-reset: numeric;
+	}
+	//
+	li.item-question__answer {
+		position: relative;
+		padding-left: toRem(25);
+		&::before {
+			counter-increment: numeric;
+			content: counter(numeric) ".";
+			position: absolute;
+			top: 50%;
+			left: toRem(5);
+			transform: translateY(-50%);
+		}
+	}
+	&__answer {
+		border-radius: toRem(5);
+		padding: toRem(5);
+		&--correct {
+			background-color: green;
+		}
+		&--error {
+			background-color: red;
+			color: #fff;
+			display: inline-block;
+		}
+	}
+
+	&__code {
+		display: block;
+		span {
+			display: block;
+			line-height: 1.3;
+		}
+	}
+}
