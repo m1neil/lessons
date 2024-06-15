@@ -1,0 +1,80 @@
+@use "sass:math";
+@import "reset";
+@import "mixins";
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+	& > main {
+		flex-grow: 1;
+	}
+}
+
+$mainColor: #fff;
+$fontFamily: "Arial";
+$fontSize: toRem(24);
+
+body {
+	background-color: #333;
+	font-size: $fontSize;
+	color: $mainColor;
+	font-family: $fontFamily;
+}
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1290;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+[class*="__container"] {
+	max-width: 1230px;
+	margin: 0 auto;
+	padding-inline: 15px;
+}
+
+.about {
+	color: #77608d;
+	&__container {
+		> * {
+			margin-bottom: toRem(25);
+		}
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__button {
+		border-radius: toRem(30);
+		background-color: #7a956b;
+		transition: background-color 0.3s;
+		color: #fff;
+		padding: toRem(15) toRem(30);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #647e57;
+			}
+		}
+	}
+}
+
+.some-block__link {
+	background-color: #794f45;
+	padding: toRem(15) toRem(25);
+	border-radius: toRem(20);
+	position: relative;
+	transition: left 0.3s;
+	left: 0;
+	@media (any-hover: hover) {
+		&:hover {
+			left: toRem(-20);
+		}
+	}
+}
