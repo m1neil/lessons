@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>lesson 21</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<main class="page">
+				<div class="task">
+					<div class="task__container">
+						<div class="task__text">Привіт ментор!:) Я радий тобі! Як справи?</div>
+						<div class="task__block block-task">
+							<div class="block-task__number">Задача №1</div>
+							<div class="block-task__question">Що потрапить в консоль?</div>
+							<pre class="block-task__code">
+<span class="code-key">let</span> <span class="code-variable">someVar</span> = <span class="code-numeric">0</span>;
+++<span class="code-variable">someVar</span>;
+
+<span class="code-key">if</span> (<span class="code-variable">someVar</span>) {
+   console.<span class="code-fun">log</span>(<span class="code-variable">someVar</span>);
+}
+								</pre>
+							<div class="block-task__answer">Відповідь: 1</div>
+						</div>
+						<div class="task__block block-task">
+							<div class="block-task__number">Задача №2</div>
+							<div class="block-task__question">За допомогою циклу FOR виведіть в консоль 10 рядків:</div>
+							<div class="block-task__answer">Список:</div>
+							<ul class="block-task__list"></ul>
+						</div>
+						<div class="task__block block-task">
+							<div class="block-task__number">Задача №3</div>
+							<div class="block-task__question">Що потрапить в консоль ?:</div>
+							<pre class="block-task__code">
+<span class="code-key">if</span> (<span class="code-numeric">2</span> * <span class="code-numeric">20</span> &lt;= <span class="code-numeric">10</span> || <span class="code-numeric">30</span> / <span class="code-numeric">2</span> &lt; <span class="code-numeric">5</span> && <span class="code-numeric">10</span> &lt;= <span class="code-string">"10"</span> || <span class="code-numeric">20</span> === <span class="code-string">"20"</span>) {
+   console.<span class="code-fun">log</span>(<span class="code-string">'000'</span>);
+}
+								</pre>
+							<div class="block-task__answer">
+								<p>
+									Відповідь: А нічого! Чому? Ну поїхали: починаємо з першої частини умови: (2 * 20
+									&lt;= 10) - 40 не менше та не дорівнює 10 ця чистина повертає false.
+								</p>
+								<p>Друга частина: (30 / 2 &lt; 5 && 10 &lt;= "10") 15 не менше 5 умова не виконана повертає false</p>
+								<p>Третя частина: (20 === "20") різні типи тому теж умова не виконана та повертає false</p>
+							</div>
+						</div>
+						<div class="task__block block-task">
+							<div class="block-task__number">Задача №4 та №5 в консолі</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
+</html>
