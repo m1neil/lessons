@@ -45,11 +45,18 @@ function windowLoaded() {
 		// cart ==============================================================
 		if (target.closest('.middle-header__button._icon-cart')) {
 			document.documentElement.classList.toggle('cart-open');
+			if (document.documentElement.classList.contains('cart-open')) {
+				// addPaddingScrollFixedElement();
+			} else if (!document.documentElement.classList.contains('catalog-open')) {
+				// removePaddingScrollFixedElement();
+			}
 		} else if (!target.closest('.cart-header') ||
 			target.closest('.cart-header__close') ||
 			target.closest('[data-cart-continue]')) {
 			document.documentElement.classList.remove('cart-open');
-			removePaddingScrollFixedElement();
+			if (!document.documentElement.classList.contains('catalog-open')) {
+				// removePaddingScrollFixedElement();
+			}
 		}
 
 		// toggle burger menu ===========================================
@@ -98,6 +105,7 @@ function windowLoaded() {
 		} else {
 			phoneBox.classList.remove('--active');
 		}
+		console.log(target);
 
 		// toggle catalog on pc =========================================================================
 		if (target.closest('.catalog-header__button')) {
@@ -108,16 +116,18 @@ function windowLoaded() {
 			document.documentElement.classList.toggle('catalog-open');
 
 			if (document.documentElement.classList.contains('catalog-open')) {
-				addPaddingScrollFixedElement();
+				// addPaddingScrollFixedElement();
 			} else {
-				removePaddingScrollFixedElement();
+				// removePaddingScrollFixedElement();
 				if (matchMedia.matches) {
 					hideSpollers(document.querySelector('.menu-catalog__list'));
 				}
 			}
 		} else if (!target.closest('.menu-catalog__wrapper')) {
 			document.documentElement.classList.remove('catalog-open');
-			removePaddingScrollFixedElement();
+			if (!document.documentElement.classList.contains('cart-open')) {
+				// removePaddingScrollFixedElement();
+			}
 			if (matchMedia.matches) {
 				hideSpollers(document.querySelector('.menu-catalog__list'));
 			}
@@ -135,9 +145,11 @@ function windowLoaded() {
 			document.documentElement.classList.contains('catalog-open') ||
 			document.documentElement.classList.contains('menu-open') ||
 			document.documentElement.classList.contains('cart-open')) {
+			addPaddingScrollFixedElement();
 			document.documentElement.classList.add('lock')
 		} else {
-			document.documentElement.classList.remove('lock')
+			removePaddingScrollFixedElement();
+			document.documentElement.classList.remove('lock');
 		}
 	}
 
@@ -185,7 +197,21 @@ function windowLoaded() {
 	}
 
 	function addPaddingScrollFixedElement() {
-		const scrollWidth = window.innerWidth - document.documentElement.offsetWidth;
+		const box = document.createElement('div');
+		box.style.cssText = `
+			width: 50px;
+			height: 50px;
+			overflow-y: scroll;
+			visibility: hidden;
+			opacity: 0;
+			position: absolute:
+			top: 0;
+			left: -100%;
+		`;
+		document.body.append(box);
+		const scrollWidth = box.offsetWidth - box.clientWidth;
+		box.remove();
+		// const scrollWidth = window.innerWidth - document.documentElement.offsetWidth;
 		document.body.style.paddingRight = `${scrollWidth / 16}rem`;
 		fixedElements.forEach(element => {
 			element.style.paddingRight = `${scrollWidth / 16}rem`;
