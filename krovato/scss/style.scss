@@ -1,0 +1,70 @@
+@use "sass:math";
+
+// Локальне підключення шрифтів
+@import "base/fonts";
+// Скидання стилів
+@import "base/reset";
+// Міксіни
+@import "base/mixins";
+
+// Налаштування адаптивної сітки ===============================================================================================================================================================================================================================================================================================
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1290;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// ==========================================================
+$mainFont: "Proxima Nova";
+@import "base/colors";
+
+:root {
+	--menu-catalog-top: 0;
+}
+
+body {
+	background-color: $lightColor;
+	color: $mainColor;
+	font-family: $mainFont, sans-serif;
+	.lock & {
+		overflow: hidden;
+	}
+}
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+}
+.wrapper > .page {
+	flex-grow: 1;
+	padding-top: toRem(221.6);
+}
+
+/* ------------------------- */
+[class*="__container"] {
+	max-width: toRem($containerWidth);
+	padding-inline: toRem(15);
+	margin-inline: auto;
+}
+
+$pc: toEm($containerWidth);
+$tablet: toEm(991.98);
+$mobile: toEm(767.98);
+$mobileSmall: toEm(479.98);
+
+// Компоненты
+@import "common";
+// Окремі сторінки
+@import "home";
+// Окремі компоненти
+@import "header";
+@import "footer";
+// ...
