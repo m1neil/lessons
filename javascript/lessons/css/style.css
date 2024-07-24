@@ -1,0 +1,245 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+
+label {
+  display: inline-block;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body {
+  background-color: #333;
+  font-size: 1.125rem;
+  color: #fff;
+  font-family: "Arial";
+}
+
+[class*=__container] {
+  max-width: 82.5rem;
+  margin-inline: auto;
+  padding-inline: 0.9375rem;
+}
+
+.page {
+  padding-block: 3.125rem;
+}
+.page__title {
+  font-size: 1.5625rem;
+  font-weight: 700;
+}
+.page__title:not(:last-child) {
+  margin-bottom: 1.5625rem;
+}
+.page__text {
+  line-height: 1.3;
+}
+.page__text:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+.page__back {
+  position: relative;
+  color: #8c71a5;
+  font-size: 1.125rem;
+  -webkit-padding-start: 0.9375rem;
+          padding-inline-start: 0.9375rem;
+}
+.page__back:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+.page__back::before, .page__back::after {
+  content: "";
+  position: absolute;
+  width: 0.625rem;
+  height: 0.125rem;
+  inset-inline-start: 0;
+  background-color: #77608d;
+  -webkit-transition: inset-inline-start 0.3s;
+  transition: inset-inline-start 0.3s;
+}
+.page__back::before {
+  inset-block-start: 0.3125rem;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.page__back::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  inset-block-end: 0.3125rem;
+}
+@media (any-hover: hover) {
+  .page__back:hover::before, .page__back:hover::after {
+    inset-inline-start: -0.25rem;
+  }
+}
+
+.list-page {
+  counter-reset: number;
+}
+.list-page__item:not(:last-child) {
+  -webkit-padding-after: 0.9375rem;
+          padding-block-end: 0.9375rem;
+  border-bottom: 0.125rem solid gray;
+  -webkit-margin-after: 0.9375rem;
+          margin-block-end: 0.9375rem;
+}
+.list-page__item::before {
+  counter-increment: number;
+  content: counter(number) ")";
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-margin-end: 0.3125rem;
+          margin-inline-end: 0.3125rem;
+}
+.list-page__item:has(a:hover)::before {
+  color: #7a956b;
+}
+.list-page__title {
+  display: inline-block;
+}
+.list-page__title a {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+@media (any-hover: hover) {
+  .list-page__title a:hover {
+    color: #7a956b;
+  }
+}
+.list-page__wrap {
+  -webkit-margin-before: 0.625rem;
+          margin-block-start: 0.625rem;
+  -webkit-padding-start: 1.5625rem;
+          padding-inline-start: 1.5625rem;
+}
+.list-page__text {
+  line-height: 1.3;
+}
+.list-page__text:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.list-page__img {
+  max-inline-size: 100%;
+}
+.list-page__img:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+.info {
+  color: red;
+  font-size: 1.5625rem;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 1rem;
+  letter-spacing: 0.0625rem;
+}
+.table th {
+  font-weight: 700;
+  border: 0.125rem solid #fff;
+  padding: 0.75rem 0.625rem;
+}
+.table__thead {
+  background-color: gray;
+}
+.table__tbody th,
+.table__tbody td, .table__tfoot th,
+.table__tfoot td {
+  border: 0.125rem solid gray;
+  padding: 0.75rem 0.625rem;
+}

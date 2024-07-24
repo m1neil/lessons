@@ -1,0 +1,130 @@
+.page {
+	padding-block: toRem(50);
+	// .page__container
+	&__container {
+	}
+	// .page__title
+	&__title {
+		font-size: toRem(25);
+		font-weight: 700;
+		&:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+	}
+	&__text {
+		line-height: 1.3;
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	&__back {
+		position: relative;
+		color: #8c71a5;
+		font-size: toRem(18);
+		padding-inline-start: toRem(15);
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: toRem(10);
+			height: toRem(2);
+			inset-inline-start: 0;
+			background-color: #77608d;
+			transition: inset-inline-start 0.3s;
+		}
+		&::before {
+			inset-block-start: toRem(5);
+			transform: rotate(-45deg);
+		}
+		&::after {
+			transform: rotate(45deg);
+			inset-block-end: toRem(5);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before,
+				&::after {
+					inset-inline-start: toRem(-4);
+				}
+			}
+		}
+	}
+}
+
+.list-page {
+	counter-reset: number;
+	// .list-page__item
+	&__item {
+		&:not(:last-child) {
+			padding-block-end: toRem(15);
+			border-bottom: toRem(2) solid gray;
+			margin-block-end: toRem(15);
+		}
+		&::before {
+			counter-increment: number;
+			content: counter(number) ")";
+			transition: color 0.3s;
+			margin-inline-end: toRem(5);
+		}
+		&:has(a:hover)::before {
+			color: #7a956b;
+		}
+	}
+	&__title {
+		display: inline-block;
+		a {
+			transition: color 0.3s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #7a956b;
+				}
+			}
+		}
+	}
+	&__wrap {
+		margin-block-start: toRem(10);
+		padding-inline-start: toRem(25);
+	}
+	&__text {
+		line-height: 1.3;
+		&:not(:last-child) {
+			margin-bottom: toRem(8);
+		}
+	}
+	&__img {
+		max-inline-size: 100%;
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+}
+
+.info {
+	color: red;
+	font-size: toRem(25);
+}
+
+.table {
+	border-collapse: collapse;
+	font-size: toRem(16);
+	letter-spacing: toRem(1);
+	th {
+		font-weight: 700;
+		border: toRem(2) solid #fff;
+		padding: toRem(12) toRem(10);
+	}
+	&__thead {
+		background-color: gray;
+	}
+	&__tbody,
+	&__tfoot {
+		th,
+		td {
+			border: toRem(2) solid gray;
+			padding: toRem(12) toRem(10);
+		}
+	}
+}
