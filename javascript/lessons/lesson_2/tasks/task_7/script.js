@@ -3,8 +3,12 @@
 window.addEventListener('load', () => {
 	const output = document.querySelector('.page__container')
 	const month = getRandomValue(1, 12)
-	const day = getRandomValue(1, 6);
-	const sum = month + day;
+	const day = getRandomValue(0, 6)
+	const sum = month + day
+	printResult(day, month, sum, output)
+})
+
+function printResult(day, month, sum, output) {
 	const table = `
 		<table class="page__table table">
 			<thead class="table__thead">
@@ -30,7 +34,7 @@ window.addEventListener('load', () => {
 		</table>
 	`
 	output.insertAdjacentHTML('beforeend', table)
-})
+}
 
 function getRandomValue(min, max) {
 	const minCeiled = Math.ceil(min);

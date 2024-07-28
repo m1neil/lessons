@@ -2,12 +2,28 @@
 
 window.addEventListener('load', () => {
 	const output = document.querySelector('.page__container')
-	const widthInCentimeters = +prompt('Ширина в сантиметрах')
+	const widthInCentimeters = parseFloat(prompt('Ширина в сантиметрах'))
 
 	if (widthInCentimeters >= 0) {
-		const meters = widthInCentimeters / 100
-		const kilometers = meters / 1000
-		const table = `
+		printResult(convertToMeters(widthInCentimeters), convertToKilometers(widthInCentimeters), output)
+	} else {
+		output.insertAdjacentHTML(
+			'beforeend',
+			'<div class="info">Ведіть коректне значення і щоб воно було більше або рівне 0</div>'
+		)
+	}
+})
+
+function convertToMeters(centimeters) {
+	return round(centimeters / 100)
+}
+
+function convertToKilometers(centimeters) {
+	return round(centimeters / 100_000)
+}
+
+function printResult(meters, kilometers, output) {
+	const table = `
 		<table class="page__table table">
 			<thead class="table__thead">
 				<tr>
@@ -18,24 +34,17 @@ window.addEventListener('load', () => {
 			<tbody class="table__tbody">
 				<tr>
 					<th>Ширина в метрах</th>
-					<td>${round(meters)} м.</td>
+					<td>${meters} м.</td>
 				</tr>
 				<tr>
 					<th>Ширина в кілометрах</th>
-					<td>${round(kilometers)} км.</td>
+					<td>${kilometers} км.</td>
 				</tr>
 			</tbody>
 		</table>
 		`
-		output.insertAdjacentHTML('beforeend', table)
-	} else {
-		output.insertAdjacentHTML(
-			'beforeend',
-			'<div class="info">Ведіть коректне значення і щоб воно було більше або рівне 0</div>'
-		)
-	}
-
-})
+	output.insertAdjacentHTML('beforeend', table)
+}
 
 function round(value, digitsAfterComa = 2) {
 	return Number.isInteger(value) ? value : value.toFixed(digitsAfterComa)

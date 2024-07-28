@@ -1,8 +1,8 @@
 'use strict'
 
 window.addEventListener('load', () => {
-	const a = +prompt('Число а:', '5')
-	const b = +prompt('Число b:', '2')
+	const a = parseFloat(prompt('Число а:', '5'))
+	const b = parseFloat(prompt('Число b:', '2'))
 	const output = document.querySelector('.page__container')
 
 	if (!a || !b && b !== 0) {

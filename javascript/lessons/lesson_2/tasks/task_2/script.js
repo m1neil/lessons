@@ -2,7 +2,7 @@
 
 window.addEventListener('load', () => {
 	const output = document.querySelector('.page__container')
-	const yearOfBirthday = +prompt('Рік вашого народження:')
+	const yearOfBirthday = parseInt(prompt('Рік вашого народження:'))
 	const CURRENT_YEAR = 2024;
 	const userAge = CURRENT_YEAR - yearOfBirthday;
 	const table = `
