@@ -161,3 +161,31 @@ div {
 		}
 	}
 }
+
+.menu {
+	// .menu__list
+	&__list {
+	}
+}
+.menu-list {
+	counter-reset: step;
+	// .menu-list__item
+	&__item {
+		display: flex;
+		column-gap: toRem(5);
+		&::before {
+			content: counter(step) ".";
+			counter-increment: step;
+		}
+	}
+}
+
+.victory {
+	font-weight: 700;
+	font-size: toRem(25);
+	color: green;
+}
+
+hr {
+	margin-block-start: toRem(15);
+}

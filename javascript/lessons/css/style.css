@@ -271,3 +271,30 @@ div {
 .table__tfoot th {
   text-align: right;
 }
+
+.menu-list {
+  counter-reset: step;
+}
+.menu-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 0.3125rem;
+     -moz-column-gap: 0.3125rem;
+          column-gap: 0.3125rem;
+}
+.menu-list__item::before {
+  content: counter(step) ".";
+  counter-increment: step;
+}
+
+.victory {
+  font-weight: 700;
+  font-size: 1.5625rem;
+  color: green;
+}
+
+hr {
+  -webkit-margin-before: 0.9375rem;
+          margin-block-start: 0.9375rem;
+}

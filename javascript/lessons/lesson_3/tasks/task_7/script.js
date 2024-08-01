@@ -9,13 +9,13 @@ const december = 12,
 	september = 9
 const output = document.querySelector('.page__container')
 
-if (numberMonth === december || numberMonth >= january && numberMonth < march)
+if (numberMonth === december || numberMonth < march)
 	output.insertAdjacentHTML('beforeend', `<div>Це - Зима</div>`)
-else if (numberMonth >= march && numberMonth < june)
+else if (numberMonth < june)
 	output.insertAdjacentHTML('beforeend', `<div>Це - Весна</div>`)
-else if (numberMonth >= june && numberMonth < september)
+else if (numberMonth < september)
 	output.insertAdjacentHTML('beforeend', `<div>Це - Літо</div>`)
-else if (numberMonth >= september && numberMonth < december)
+else if (numberMonth < december)
 	output.insertAdjacentHTML('beforeend', `<div>Це - Осінь</div>`)
 else
 	output.insertAdjacentHTML('beforeend', `<div class="info">Такого місяця не існує!!!</div>`)
