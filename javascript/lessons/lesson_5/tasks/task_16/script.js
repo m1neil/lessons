@@ -1,7 +1,7 @@
 'use strict'
 
-const quantityColumn = 5
-const quantityRow = 5
+const quantityColumn = 3
+const quantityRow = 3
 const cells = quantityColumn * quantityRow
 const positionShip = Math.floor(Math.random() * cells + 1)
 let quantityShells = 5
