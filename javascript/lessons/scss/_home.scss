@@ -72,6 +72,18 @@
 			margin-block-end: toRem(20);
 		}
 	}
+
+	&__tables {
+		display: flex;
+		align-items: flex-start;
+		column-gap: toRem(40);
+		table {
+			td {
+				min-inline-size: toRem(42);
+				text-align: center;
+			}
+		}
+	}
 }
 
 div {
@@ -169,6 +181,9 @@ div {
 }
 .menu-list {
 	counter-reset: step;
+	&--start-3 {
+		counter-reset: step 2;
+	}
 	// .menu-list__item
 	&__item {
 		display: flex;
@@ -188,4 +203,61 @@ div {
 
 hr {
 	margin-block-start: toRem(15);
+}
+
+.list {
+	&__item {
+		display: flex;
+		column-gap: toRem(10);
+		align-items: center;
+		&:not(:last-child) {
+			margin-block-end: toRem(10);
+		}
+		&::before {
+			content: "";
+			inline-size: toRem(10);
+			block-size: toRem(10);
+			background-color: #77608d;
+			border-radius: 50%;
+		}
+	}
+}
+
+.form {
+	&__row {
+		&:not(:last-child) {
+			margin-block-end: toRem(15);
+		}
+	}
+	&__label {
+		display: flex;
+		column-gap: toRem(10);
+		align-items: center;
+		input {
+			align-self: flex-start;
+			max-inline-size: toRem(200);
+			block-size: toRem(35);
+			background-color: #fff;
+			border: toRem(1) solid gray;
+			padding-inline: toRem(15);
+			border-radius: toRem(5);
+			color: #000;
+		}
+	}
+}
+
+.images-game {
+	display: flex;
+	align-items: center;
+	column-gap: toRem(25);
+	&__item {
+		flex-basis: toRem(200);
+		aspect-ratio: 1;
+		flex-shrink: 0;
+		img {
+			inline-size: 100%;
+			block-size: 100%;
+			object-fit: contain;
+		}
+	}
 }
