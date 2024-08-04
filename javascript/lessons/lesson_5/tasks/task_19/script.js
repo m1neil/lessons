@@ -9,7 +9,7 @@ let totalProfit = 0
 for (let i = 1; i <= quantityWeeks; i++) {
 	let totalProfitForWeek = 0
 	for (let dayWeek = 1; dayWeek <= 7; dayWeek++) {
-		const profitForDay = parseFloat(prompt(`Ведіть прибуток за ${dayWeek} день тижню: `))
+		const profitForDay = parseFloat(prompt(`Ведіть прибуток за ${dayWeek} день тижню, тижня №${i}: `))
 
 		if (isNaN(profitForDay)) {
 			alert('Не коректні данні, спробуйте ще раз')
