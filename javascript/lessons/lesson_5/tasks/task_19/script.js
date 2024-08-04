@@ -20,7 +20,7 @@ for (let i = 1; i <= quantityWeeks; i++) {
 		totalProfitForWeek += profitForDay
 	}
 	totalProfit += totalProfitForWeek
-	ol.insertAdjacentHTML('beforeend', `<li class="menu-list__item">Прибуток за неділю №${i} - ${totalProfitForWeek} грн.</li>`)
+	ol.insertAdjacentHTML('beforeend', `<li class="menu-list__item">Прибуток за тиждень №${i} - ${totalProfitForWeek} грн.</li>`)
 }
 
 const out = document.querySelector('.page__container')
