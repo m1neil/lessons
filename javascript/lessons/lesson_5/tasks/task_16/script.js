@@ -8,7 +8,7 @@ let quantityShells = 5
 let healthShip = 1
 
 do {
-	const numberCel = parseInt(prompt(`Кількість снарядів: ${quantityShells} Здоров'я корабля: ${healthShip}, Номер комірки для пострілу: `))
+	const numberCel = parseInt(prompt(`Кількість снарядів: ${quantityShells}, Кількість клітинок: ${cells}, Здоров'я корабля: ${healthShip}, Номер комірки для пострілу: `))
 
 	if (isNaN(numberCel) || numberCel <= 0 || numberCel > cells) {
 		alert('Не коректне значення або постріл поза зоную поля')
