@@ -17,7 +17,7 @@ if (confirm('Розпочати тестування?')) {
 	}
 
 	while (numberSingleShips > 0) {
-		const indexTargetCell = parseInt(prompt(`Ведіть клітинку для пострілу від 1 до ${numberCells.length}`)) - 1
+		const indexTargetCell = parseInt(prompt(`Ведіть клітинку для пострілу від 1 до ${numberCells}`)) - 1
 		if (field[indexTargetCell] === 1) {
 			alert('Ви втопили корабель')
 			numberSingleShips--
