@@ -12,7 +12,7 @@ output.innerHTML += `<div>Ціни із знижкою ${productsPricesWithDisco
 function getArrayWithRandomValues(quantityElements) {
 	const array = []
 	for (let i = 0; i < quantityElements; i++) {
-		array.push(getRandomValue(1001, 2000))
+		array.push(getRandomValue(500, 2000))
 	}
 	return array
 }
