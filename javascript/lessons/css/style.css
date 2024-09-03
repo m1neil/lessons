@@ -227,6 +227,21 @@ div {
 .list-page__item:has(a:hover)::before {
   color: #7a956b;
 }
+.list-page__item--gred {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 0.9375rem;
+  -webkit-column-gap: 0.3125rem;
+     -moz-column-gap: 0.3125rem;
+          column-gap: 0.3125rem;
+}
+.list-page__item--gred img {
+  max-width: 100%;
+  grid-column: span 2;
+}
+.list-page__item--gred .list-page__result {
+  grid-column: span 2;
+}
 .list-page__title {
   display: inline-block;
 }
@@ -302,7 +317,7 @@ div {
   font-weight: 700;
 }
 .table__thead th {
-  text-align: right;
+  text-align: center;
   font-weight: 700;
 }
 .table__tbody th,
@@ -310,6 +325,7 @@ div {
 .table__tfoot td {
   border: 0.125rem solid gray;
   padding: 0.75rem 0.625rem;
+  text-align: center;
 }
 .table__tbody--center th {
   text-align: right;
@@ -539,4 +555,40 @@ hr {
 .code,
 .code > span {
   display: block;
+}
+
+.game-field {
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1.5625rem);
+  grid-template-rows: repeat(6, 1.5625rem);
+  grid-auto-rows: repeat(6, 1.875rem);
+  gap: 0.4375rem;
+}
+.game-field:not(.--end) input {
+  cursor: pointer;
+}
+.game-field.--end input {
+  cursor: default;
+}
+.game-field input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0.125rem solid grey;
+}
+.game-field input.--miss, .game-field input.--complete {
+  cursor: default;
+}
+.game-field input.--miss {
+  background-color: red;
+}
+.game-field input.--complete {
+  background-color: green;
+}
+
+.start-data:not(:last-child) {
+  margin-bottom: 0.9375rem;
 }
