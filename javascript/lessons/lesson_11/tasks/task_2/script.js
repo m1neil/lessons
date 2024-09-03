@@ -25,7 +25,6 @@ const totalSalaryEveryShop = getEarnForDays(salaryShopsForWeek)
 task_1.insertAdjacentHTML('beforeend', `<div>${totalSalaryEveryShop.join('; ')}</div>`)
 
 const totalSalaryForMondayAndTuesday = getEarnForDays(salaryShopsForWeek, 0, 2)
-console.log(totalSalaryForMondayAndTuesday);
 task_2.insertAdjacentHTML('beforeend', `<div>${totalSalaryForMondayAndTuesday.join('; ')}</div>`)
 
 const totalSalaryForWorkDays = getEarnForDays(salaryShopsForWeek, 0, 5)
@@ -37,12 +36,8 @@ task_4.insertAdjacentHTML('beforeend', `<div>${totalSalaryForWeekendDays.join(';
 const maxSalaryForWednesday = Math.max(...getEarnForDays(salaryShopsForWeek, 2, 3))
 task_5.insertAdjacentHTML('beforeend', `<div>${maxSalaryForWednesday}</div>`)
 
-const valueMoreThenTwoHundred = salaryShopsForWeek.reduce((array, week) => {
-	const values = week.filter(value => value > 200)
-	array.push(values)
-	return array
-}, []).flat()
-task_6.insertAdjacentHTML('beforeend', `<div>${valueMoreThenTwoHundred.join('; ')}</div>`)
+const valueMoreThanTwoHundred = salaryShopsForWeek.map(week => week.filter(value => value > 200)).flat()
+task_6.insertAdjacentHTML('beforeend', `<div>${valueMoreThanTwoHundred.join('; ')}</div>`)
 
 salaryShopsForWeek.forEach(week => week.sort((a, b) => a - b))
 const tableWeeksSortForIncrease = createTable(salaryShopsForWeek)
