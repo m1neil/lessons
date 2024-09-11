@@ -601,3 +601,36 @@ hr {
 .start-data:not(:last-child) {
   margin-bottom: 0.9375rem;
 }
+
+.list-object__item {
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.6;
+}
+.list-object__item::before {
+  content: "";
+  position: absolute;
+  width: 0.625rem;
+  height: 0.125rem;
+  top: 0.75rem;
+  left: 0;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.list-object__sub-list {
+  padding-left: 0.3125rem;
+}
+.list-object__sub-item {
+  position: relative;
+  padding-left: 0.9375rem;
+}
+.list-object__sub-item::before {
+  content: "";
+  position: absolute;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  top: 0.6875rem;
+  left: 0;
+  border-radius: 50%;
+  background-color: #fff;
+}
