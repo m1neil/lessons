@@ -1,9 +1,5 @@
 'use strict'
 
-// .page__container
-
-// Створити клас, що дозволяє виконувати такі операції над масивами: знаходження кількості додатних, кількості від’ємних, кількість входжень деякого числа (статичні методи)
-
 class List {
 	static getQuantityPositiveOrNegativeNumbers(array, isGetPositive = true) {
 		List.isCorrectArray(array)
@@ -50,14 +46,13 @@ try {
 	const searchValue = 10
 	const quantitySearchNumber = List.getQuantityEntryNumber(arrayRandomNumber, searchValue)
 
-	print(out, `<div>Масив: ${arrayRandomNumber.join(', ')}</div>`)
-	print(out, `<div>Кількість позитивних чисел: ${quantityPositiveNumbers}</div>`)
-	print(out, `<div>Кількість негативних чисел: ${quantityNegativeNumbers}</div>`)
-	print(out, `<div>Кількість входжень числа - ${searchValue}: ${quantitySearchNumber}</div>`)
+	print(out, `Масив: ${arrayRandomNumber.join(', ')}`)
+	print(out, `Кількість позитивних чисел: ${quantityPositiveNumbers}`)
+	print(out, `Кількість негативних чисел: ${quantityNegativeNumbers}`)
+	print(out, `Кількість входжень числа - ${searchValue}: ${quantitySearchNumber}`)
 } catch (error) {
 	out.insertAdjacentHTML('beforeend', `<div class="info">Сталася помилка: ${error.message}</div>`)
 }
-
 
 function print(output, data, classes = '', teg = 'div') {
 	if (!output)
