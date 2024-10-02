@@ -11,12 +11,11 @@ function windowLoaded() {
 
 	actionsList.forEach(button => {
 		button.addEventListener('click', () => {
-
+			removeElement('.fields__error')
 			const operation = button.dataset.operation ? button.dataset.operation : ''
 			try {
 				calcNumbers(operation)
 			} catch (error) {
-				removeElement('.fields__error')
 				const errorDiv = createElement('div', 'fields__error info', error.message)
 				container.append(errorDiv)
 				inputResult.value = 0
