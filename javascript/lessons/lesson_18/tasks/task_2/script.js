@@ -16,6 +16,7 @@ function windowLoaded() {
 	buttonConvert.addEventListener('click', convertCurrency)
 
 	function convertCurrency() {
+		removeElement('.error')
 		try {
 			const sumUAH = parseFloat(inputSumUAH.value)
 			isCorrectSum(sumUAH)
@@ -24,7 +25,6 @@ function windowLoaded() {
 			inputSumEuro.value = sumInEuro.toFixed(2)
 			inputSumDollars.value = sumInDollars.toFixed(2)
 		} catch (error) {
-			removeElement('.error')
 			const errorDiv = createElement('div', 'error info', error.message)
 			container.append(errorDiv)
 			inputSumDollars.value = 0
