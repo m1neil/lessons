@@ -17,7 +17,7 @@ function windowLoaded() {
 				'../../../img/tank/explosion.png'
 			)
 			tank.render('.page__container')
-		}, 200 * i);
+		}, 1000 * i);
 	}
 }
 
