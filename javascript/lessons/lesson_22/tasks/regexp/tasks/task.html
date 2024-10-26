@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Задача </title>
+		<link rel="stylesheet" href="../../../../css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<main class="page">
+				<div class="page__container">
+					<a href="../../index.html" class="page__back">Повернутися до списку задач</a>
+					<div id="task-1" class="page__task">
+						<h1 class="page__title">Задача 1</h1>
+						<div class="page__wrap"> Дано масив рядків. Вивести ті, у яких є цифри (використати метод test та регулярні вирази).</div>
+					</div>
+					<div id="task-2" class="page__task">
+						<h1 class="page__title">Задача 2</h1>
+						<div class="page__wrap">Дано масив рядків. Вивести ті, у яких немає цифр.</div>
+					</div>
+					<div id="task-3" class="page__task">
+						<h1 class="page__title">Задача 3</h1>
+						<div class="page__wrap">Дано масив рядків. Вивести ті, у яких є голосні літери.</div>
+					</div>
+					<div id="task-4" class="page__task">
+						<h1 class="page__title">Задача 4</h1>
+						<div class="page__wrap">Дано масив рядків. Вивести ті, у яких немає голосних літер.</div>
+					</div>
+					<div id="task-5" class="page__task">
+						<h1 class="page__title">Задача 5</h1>
+						<div class="page__wrap">Дано масив рядків. Вивести ті, у яких є або цифра 1 або цифра 3.</div>
+					</div>
+					<div id="task-6" class="page__task">
+						<h1 class="page__title">Задача 6</h1>
+						<div class="page__wrap">Дано рядок тексту, вивести усі числа, які є у тексті.</div>
+					</div>
+					<div id="task-7" class="page__task">
+						<h1 class="page__title">Задача 7</h1>
+						<div class="page__wrap">Дано рядок тексту. Знайти усі знаки пунктуації, які були використано.</div>
+					</div>
+					<div id="task-8" class="page__task">
+						<h1 class="page__title">Задача 8</h1>
+						<div class="page__wrap">Дано рядок тексту. Вивести усі складові, які розділені розділовими знаками.</div>
+					</div>
+					<div id="task-9" class="page__task">
+						<h1 class="page__title">Задача 9</h1>
+						<div class="page__wrap">Дано рядок тексту. Перевірити, чи містить він дату у форматі dd.mm.yyyy (dd- день, mm- місяць, yyyy- рік).</div>
+					</div>
+					<div id="task-10" class="page__task">
+						<h1 class="page__title">Задача 10</h1>
+						<div class="page__wrap">Дано рядок тексту. Підрахувати кількість двоцифрових чисел у рядку.</div>
+					</div>
+					<div id="task-11" class="page__task">
+						<h1 class="page__title">Задача 11</h1>
+						<div class="page__wrap">Визначити чи може бути рядок тексту номером банківської картки (приклад: «4142-3433-2323-3434»). Знайти усі такі номери.</div>
+					</div>
+					<div id="task-12" class="page__task">
+						<h1 class="page__title">Задача 12</h1>
+						<div class="page__wrap">Дано адресу сайту. Визначити, чи є він урядовим (містить домен “gov”)</div>
+					</div>
+					<div id="task-13" class="page__task">
+						<h1 class="page__title">Задача 13</h1>
+						<div class="page__wrap">Вибрати усі роки після 2021 року з отриманого повідомлення</div>
+					</div>
+					<div id="task-14" class="page__task">
+						<h1 class="page__title">Задача 14</h1>
+						<div class="page__wrap">Дано номер телефону. Перевірити, чи є цей телефон телефоном з України (починаєтсья на «+38»)</div>
+					</div>
+					<div id="task-15" class="page__task">
+						<h1 class="page__title">Задача 15</h1>
+						<div class="page__wrap">Користувач вводить прізвище та ім’я в одному рядку через пробіл. Замінити пробіл на дефіс.</div>
+						<label class="label-username">
+							Ім'я та прізвище:
+							<input value="Alekseyev Eric" type="text" class="input" id="username" name="username">
+						</label>
+						<button class="button" id="transform" type="button">Трансформувати</button>
+						<div class="transform-username">Змінений формат: <span></span></div>
+					</div>
+					<div id="task-16" class="page__task">
+						<h1 class="page__title">Задача 16</h1>
+						<div class="page__wrap">Користувач вводить дату у форматі «день.місяць.рік». Отримати рядкове представлення дати у форматі «день/місяць/рік»</div>
+						<input value="12.09.2024" type="text" class="input" name="date" id="date">
+						<button type="button" id="change-dots" class="button">Змінити крапки на слеши</button>
+						<div id="date-new-separator">Новий вигляд: </div>
+					</div>
+					<div id="task-17" class="page__task">
+						<h1 class="page__title">Задача 17</h1>
+						<div class="page__wrap">Користувач вводить день (номер дня (0-6) або «sun,mon,tue,wed,thu,fri,sat»). Визначити, чи є це день вихідним</div>
+						<label>
+							День тижня:
+							<input type="text" class="input" name="day-week" id="day-week">
+						</label>
+						<button type="button" class="button" id="weekend-day">З'ясувати чи вихідний день</button>
+						<div id="is-weekend"></div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
