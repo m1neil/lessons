@@ -1640,3 +1640,56 @@ hr {
 .bank__nav:not(:last-child) {
   margin-bottom: 0.9375rem;
 }
+
+#color {
+  cursor: pointer;
+  width: 3.75rem;
+  height: 2.5rem;
+}
+
+.label-color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
+}
+
+.page__container--localstorage {
+  padding-block: 1.875rem;
+  background-color: #333;
+}
+
+.page__task:not(:last-child) {
+  padding-bottom: 1.25rem;
+  border-bottom: 0.0625rem solid gray;
+  margin-bottom: 1.25rem;
+}
+
+.label-username {
+  position: relative;
+  width: 100%;
+  padding-bottom: 1.25rem;
+}
+.label-username .error {
+  position: absolute;
+  top: 4.375rem;
+  left: 0;
+}
+
+.error {
+  color: red;
+}
+
+.input {
+  border: 0.0625rem solid transparent;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.--error .input {
+  border-color: red;
+}
