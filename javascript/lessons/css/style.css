@@ -1693,3 +1693,35 @@ hr {
 .--error .input {
   border-color: red;
 }
+
+.ages__item,
+.authors__item,
+.visitors__item,
+.students__item,
+.temperatures__item,
+.products__item,
+.numbers__item {
+  margin-bottom: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
+}
+.ages__item::before,
+.authors__item::before,
+.visitors__item::before,
+.students__item::before,
+.temperatures__item::before,
+.products__item::before,
+.numbers__item::before {
+  content: "";
+  width: 0.5rem;
+  aspect-ratio: 1;
+  background-color: #7a956b;
+  border-radius: 50%;
+}
