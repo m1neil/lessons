@@ -71,6 +71,7 @@ export class PaginationCards {
 			this.toggleBlockButtons()
 		} catch (error) {
 			console.error(error.message)
+			alert(`Reload the page! Click F5 on your keyboard.`)
 		}
 	}
 
