@@ -4,7 +4,8 @@ export class HttpRequest {
 		const response = await fetch(url, {
 			method,
 			contentType,
-			'x-api-key': this.apiKey
+			'x-api-key': this.apiKey,
+			mode: 'no-cors'
 		})
 
 		if (!response.ok)
