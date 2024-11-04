@@ -1,124 +1,68 @@
-"use strict";
+'use strict'
+import { initMenu } from './menu.js'
+import { initFixedHeader } from './fixed-header.js'
+import { initGalaxySlider } from './sliders.js'
+import { HttpRequest } from './HttpRequest.js'
+import { initPhoneNumber } from './phoneNumber.js'
+import { initGoto, createSpinner, createPetCard } from './functions.js'
+import { initPopup } from './popup.js'
+import { initPagination } from './PaginationCards.js'
 
-window.addEventListener('load', loaded);
-window.addEventListener('DOMContentLoaded', () => {
-	const scrollWidth = getWidthScroll();
-	const video = document.querySelector('.video');
+window.addEventListener('load', windowLoaded)
 
-	if (video) {
-		video.style.paddingRight = `${scrollWidth}px`;
+function windowLoaded() {
+	initMenu(400)
+	initFixedHeader()
+	try {
+		initPhoneNumber()
+		insertCard('.pets__slider', 'pets', true)
+		initPagination()
+		initGoto()
+	} catch (error) {
+		console.error(error.message)
 	}
-
-	document.documentElement.classList.add('loading');
-	document.body.style.paddingRight = `${scrollWidth}px`;
-	document.body.style.overflow = 'hidden';
-})
-
-function loaded() {
-	document.addEventListener('click', documentActions);
-
-	const header = document.querySelector('header');
-	header.addEventListener('mouseenter', changeStyleFooter);
-	header.addEventListener('mouseleave', changeStyleFooter);
-
-	initObserver();
-
-	const video = document.querySelector('.video');
-
-	setTimeout(() => {
-		document.body.classList.add('loaded');
-	}, 1000);
-
-	setTimeout(() => {
-		document.body.style.removeProperty('padding-right');
-		document.body.style.overflow = ''
-		if (video) {
-			video.style.paddingRight = 0;
-		}
-		document.documentElement.classList.remove('loading');
-	}, 1300);
-
+	initPopup()
 }
 
-function documentActions(e) {
-	const target = e.target;
-
-	if (target.closest('.item')) {
-		const currentTarget = target.closest('.item');
-		currentTarget.classList.toggle('active');
-	}
+function getCardsList(images, bemClass, isCardInSlider = false) {
+	const wrapper = document.createElement('div')
+	wrapper.className = bemClass ? `${bemClass}__wrapper swiper-wrapper` : 'swiper-wrapper'
+	images.forEach(info => {
+		const article = createPetCard(info)
+		if (isCardInSlider) {
+			const cardWrapper = document.createElement('div')
+			cardWrapper.className = bemClass ? `${bemClass}__slide swiper-slide` : 'swiper-slide'
+			cardWrapper.append(article)
+			wrapper.append(cardWrapper)
+		} else wrapper.append(article)
+	})
+	return wrapper
 }
 
-function changeStyleFooter(e) {
-	const footer = document.querySelector('footer');
-	if (e.type === 'mouseenter') {
-		footer.classList.add('active');
-	} else if (e.type === 'mouseleave') {
-		footer.classList.remove('active');
-	}
-}
+async function insertCard(selectorContainer, bemClass, isInsetInSlider = false) {
+	const container = document.querySelector(selectorContainer)
+	if (!container) return
 
-function initObserver() {
-	const options = {
-		root: null,
-		rootMargin: '0px 0px 0px 0px',
-		threshold: 0.7
-	}
+	const spinner = createSpinner()
+	container.append(spinner)
 
-	const observer = new IntersectionObserver(initItems, options);
-	const items = document.querySelectorAll('[class*=--observer]');
-	items.forEach(item => observer.observe(item));
+	let amountCard = container.hasAttribute('data-amount') ?
+		parseInt(container.getAttribute('data-amount')) : 3
 
-	function initItems(entries, observer) {
-		entries.forEach(entry => {
-			const currentTarget = entry.target;
-			if (entry.isIntersecting && currentTarget.hasAttribute('data-timer-delay')) {
-				if (document.documentElement.classList.contains('loading')) {
-					console.log(true);
-					setTimeout(() => {
-						initTimer(currentTarget);
-					}, 1300);
-				} else {
-					initTimer(currentTarget);
-				}
-				observer.unobserve(currentTarget);
-			}
-		});
+	if (isNaN(amountCard) || amountCard <= 0)
+		throw new RangeError("The number should be more than zero!")
+
+	try {
+		let data = await HttpRequest.getData(`https://api.thecatapi.com/v1/images/search?limit=${amountCard}&has_breeds=1&breed_ids=beng,abys`)
+		data = await HttpRequest.transformData(data, 'https://api.thecatapi.com/v1/images')
+
+		spinner.remove()
+		container.prepend(getCardsList(data, bemClass, isInsetInSlider))
+		if (isInsetInSlider) initGalaxySlider()
+	} catch (error) {
+		console.debug(error.message)
+		alert(`Reload the page! Click F5 on your keyboard.`)
 	}
 }
 
-function initTimer(target) {
-	const delay = target.dataset.timerDelay >= 0 ? +target.dataset.timerDelay : 1000;
-	const endValue = target.dataset.timerEndValue >= 0 ? +target.dataset.timerEndValue : 0;
-	console.log(endValue);
-	const boxValue = target.querySelector('span');
-	let counter = 0;
 
-	if (boxValue) {
-		const timer = setInterval(() => {
-			if (counter >= endValue) {
-				clearInterval(timer);
-			} else {
-				boxValue.textContent = ++counter;
-			}
-		}, delay);
-	}
-}
-
-function getWidthScroll() {
-	const div = document.createElement('div');
-	div.style.cssText = `
-		position: fixed;
-		width: 200px;
-		height: 200px;
-		top: 0;
-		left: -100%;
-		overflow-y: scroll;
-		opacity: 0;
-		visibility: hidden;
-	`;
-	document.body.append(div);
-	const widthScroll = div.offsetWidth - div.clientWidth;
-	div.remove();
-	return widthScroll;
-}

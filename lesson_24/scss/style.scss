@@ -1,6 +1,8 @@
 @use "sass:math";
-@import "reset";
-@import "mixins";
+
+@import "base/fonts";
+@import "base/reset";
+@import "base/mixins";
 
 .wrapper {
 	min-height: 100%;
@@ -10,60 +12,36 @@
 	& > main {
 		flex-grow: 1;
 	}
-	opacity: 0;
-	visibility: hidden;
-	transition:
-		opacity 0.3s,
-		visibility 0.3s;
-	.loaded & {
-		opacity: 1;
-		visibility: visible;
-	}
 }
 
-$mainColor: #fff;
-$fontFamily: "Arial";
-$fontSize: toRem(18);
+$mainColor: #4c4c4c;
+$colorGray: #cdcdcd;
+$fontFamily: "Georgia", serif;
+$fontSecond: Arial, sans-serif;
+$fontSize: toRem(15);
 
 body {
-	background-color: #333;
 	font-size: $fontSize;
 	color: $mainColor;
 	font-family: $fontFamily;
-	// overflow: hidden;
+	.lock & {
+		overflow: hidden;
+	}
 }
 
-.spinner {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition:
-		opacity 0.3s,
-		visibility 0.3s;
-	img {
-		width: toRem(200);
-		flex-shrink: 0;
-	}
-	.loaded & {
-		opacity: 0;
-		visibility: hidden;
-	}
+.page--pt {
+	padding-top: var(--header-height);
 }
 
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
-$maxWidth: 1920;
+$maxWidth: 1280;
 // Ширина обмежуючого контейнера (0 = немає обмеження)
-$maxWidthContainer: 1290;
+$maxWidthContainer: 1200;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
-$containerPadding: 30;
+$containerPadding: 20;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
 
@@ -78,4 +56,14 @@ $mobileSmall: toEm(479.98);
 	padding-inline: toRem($containerPadding / 2);
 }
 
+:root {
+	--header-height: clamp(7.5rem, 1.128rem + 13.27vw, 11.25rem);
+	scroll-behavior: smooth;
+}
+
+@import "base/slider";
+@import "common";
+@import "header";
+@import "footer";
 @import "home";
+@import "pets";
